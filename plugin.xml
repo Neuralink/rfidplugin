@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="com.neuralink.cordova.rfidplugin"
+    version="0.0.1">
+    <name>RFIDPlugin</name>
+    <description>Cordova plugin to communicate with the android RFID</description>
+    <license>MIT</license>
+    <keywords>RFID,reader, scanner</keywords>
+
+    <!-- js module -->
+    <js-module src="www/rfidplugin.js" name="RFIDPlugin">
+        <clobbers target="window.rfidplugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="RFIDPlugin">
+                <param name="android-package" value="com.neuralink.cordova.rfidplugin.RFIDPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/com/neuralink/cordova/rfidplugin/RFIDPlugin.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
+        <source-file src="src/android/com/neuralink/cordova/rfidplugin/SerialPort.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
+        <source-file src="src/android/com/neuralink/cordova/rfidplugin/SerialPortFinder.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
+        <source-file src="src/android/com/neuralink/cordova/rfidplugin/PWMControl.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
+        <source-file src="lib/armeabi/libpwmV2.so" target-dir="libs" />
+        <source-file src="lib/armeabi/libserial_port.so" target-dir="libs" />
+    </platform>
+</plugin>
