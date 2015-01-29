@@ -32,7 +32,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android_serialport_api.SerialPort;
-import android_serialport_api.SerialPortFinder;
+import android_serialportfinder_api.SerialPortFinder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
