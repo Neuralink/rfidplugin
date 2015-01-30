@@ -22,10 +22,10 @@
         </config-file>
         <source-file src="src/android/com/neuralink/cordova/rfidplugin/RFIDPlugin.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
         <!--<source-file src="src/android/com/neuralink/cordova/rfidplugin/SerialPort.java" target-dir="src/com/neuralink/cordova/rfidplugin" />-->
-        <source-file src="src/android/com/neuralink/cordova/rfidplugin/SerialPortFinder.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
+        <!--<source-file src="src/android/com/neuralink/cordova/rfidplugin/SerialPortFinder.java" target-dir="src/com/neuralink/cordova/rfidplugin" />-->
         <source-file src="src/android/com/neuralink/cordova/rfidplugin/PWMControl.java" target-dir="src/com/neuralink/cordova/rfidplugin" />
         <source-file src="lib/HdxUtil.jar" target-dir="libs" />
         <source-file src="lib/libpwmV2.so" target-dir="libs" />
-        <source-file src="lib/libserial_port.so" target-dir="libs" />
+        <!--<source-file src="lib/libserial_port.so" target-dir="libs" />-->
     </platform>
 </plugin>
