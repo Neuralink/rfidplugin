@@ -160,7 +160,7 @@ public class RFIDPlugin extends CordovaPlugin {
 			mSerialPort = app.getSerialPort();
 			mOutputStream = mSerialPort.getOutputStream();
 			mInputStream = mSerialPort.getInputStream();
-			PWMControl.RfidEnable(1);
+			//PWMControl.RfidEnable(1);
 
 			//Create a receiving thread 
 			
