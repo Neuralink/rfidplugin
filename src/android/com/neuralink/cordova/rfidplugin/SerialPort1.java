@@ -39,7 +39,7 @@ public class SerialPort1 {
 	private FileInputStream mFileInputStream;
 	private FileOutputStream mFileOutputStream;
 
-	public SerialPort(File device, int baudrate, int flags) throws SecurityException, IOException {
+	public SerialPort1(File device, int baudrate, int flags) throws SecurityException, IOException {
 
 		/* Check access permission */
 		if (!device.canRead() || !device.canWrite()) {
