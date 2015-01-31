@@ -133,7 +133,8 @@ public class RFIDPlugin extends CordovaPlugin {
 				int baudrate = 9600;
 	
 				/* Open the serial port */
-				mSerialPort = new SerialPort(new File(path), baudrate, 0);
+				//mSerialPort = new SerialPort(new File(path), baudrate, 0);
+				mSerialPort = new SerialPort(path, baudrate, 0);
 			}
 			return mSerialPort;
 		}
