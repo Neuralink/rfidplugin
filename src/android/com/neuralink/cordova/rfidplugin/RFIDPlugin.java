@@ -32,7 +32,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android_serialport_api.SerialPort;
-import android_serialportfinder_api.SerialPortFinder;
+//import android_serialportfinder_api.SerialPortFinder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -154,17 +154,7 @@ public class RFIDPlugin extends CordovaPlugin {
     boolean open()
     {
     	boolean enable=true;
-		try {
-			mSerialPort = app.getSerialPort();
-		} catch (SecurityException e) {
-			DisplayError("ERROR SECURITY");
-		} catch (IOException e) {
-			DisplayError("ERROR UNKNOWN");
-		} catch (InvalidParameterException e) {
-			DisplayError("ERROR CONFIGURATION");
-		}
-		
-/*
+
 		try {
 			mSerialPort = app.getSerialPort();
 			mOutputStream = mSerialPort.getOutputStream();
@@ -193,7 +183,7 @@ public class RFIDPlugin extends CordovaPlugin {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-*/
+
 		return true;
     }
 	private void sleep(int ms) {
