@@ -28,7 +28,7 @@ import java.io.OutputStream;
 import android.util.Log;
 import java.io.BufferedReader;
 
-public class SerialPort {
+public class SerialPort1 {
 
 	private static final String TAG = "SerialPort";
 
