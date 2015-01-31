@@ -31,7 +31,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android_serialport_api1.SerialPort;
+import android_serialport_api.SerialPort;
 import android_serialportfinder_api.SerialPortFinder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -67,7 +67,7 @@ public class RFIDPlugin extends CordovaPlugin {
 	protected OutputStream mOutputStream;
 	private InputStream mInputStream;
 	private ReadThread mReadThread;    
-	private TTT   app;
+	private TTT app;
 	Button btnRead;
 	Button btnWrite;
 	RFID_Operation rfid_operation;
@@ -99,16 +99,14 @@ public class RFIDPlugin extends CordovaPlugin {
 	public final int ACCESS_TIMEOUT=27;         //���ʳ�ʱ
 	public final int QUIT	       =30;         //��һ����������ʱ�����
 	public final int COMM_ERR      =31;
-	
-		
+			
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 
 		app = new TTT();
 		handler = new MyHandler();
 		//PWMControl.RfidEnable(1);
-		sleep(100);
-
+		//sleep(100);
 
 		if(opened==false)
 		{
@@ -125,7 +123,7 @@ public class RFIDPlugin extends CordovaPlugin {
 
 	private class TTT
 	{
-//		public SerialPortFinder mSerialPortFinder = new SerialPortFinder();
+		//public SerialPortFinder mSerialPortFinder = new SerialPortFinder();
 		private SerialPort mSerialPort = null;
 	
 		public SerialPort getSerialPort() throws SecurityException, IOException, InvalidParameterException {
@@ -158,11 +156,22 @@ public class RFIDPlugin extends CordovaPlugin {
     	boolean enable=true;
 		try {
 			mSerialPort = app.getSerialPort();
+		} catch (SecurityException e) {
+			DisplayError("ERROR SECURITY");
+		} catch (IOException e) {
+			DisplayError("ERROR UNKNOWN");
+		} catch (InvalidParameterException e) {
+			DisplayError("ERROR CONFIGURATION");
+		}
+		
+/*
+		try {
+			mSerialPort = app.getSerialPort();
 			mOutputStream = mSerialPort.getOutputStream();
 			mInputStream = mSerialPort.getInputStream();
 			//PWMControl.RfidEnable(1);
 
-			/* Create a receiving thread */
+			//Create a receiving thread 
 			
 			mReadThread = new ReadThread();
 			mReadThread.start();
@@ -175,14 +184,16 @@ public class RFIDPlugin extends CordovaPlugin {
 		} catch (IOException e) {
 			DisplayError("ERROR UNKNOWN");
 		} catch (InvalidParameterException e) {
-			//DisplayError("ERROR CONFIGURATION);
+			DisplayError("ERROR CONFIGURATION");
 		}
+
 		rfid_operation = new AutoSeekCard();
 		try {
 			rfid_operation.start();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+*/
 		return true;
     }
 	private void sleep(int ms) {
