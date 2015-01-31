@@ -30,7 +30,7 @@ import java.io.BufferedReader;
 
 public class SerialPort1 {
 
-	private static final String TAG = "SerialPort";
+	private static final String TAG = "SerialPort1";
 
 	/*
 	 * Do not remove or rename the field mFd: it is used by native method close();
