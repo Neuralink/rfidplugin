@@ -28,9 +28,9 @@ import java.io.OutputStream;
 import android.util.Log;
 import java.io.BufferedReader;
 
-public class SerialPort1 {
+public class SerialPort {
 
-	private static final String TAG = "SerialPort1";
+	private static final String TAG = "SerialPort";
 
 	/*
 	 * Do not remove or rename the field mFd: it is used by native method close();
@@ -39,7 +39,7 @@ public class SerialPort1 {
 	private FileInputStream mFileInputStream;
 	private FileOutputStream mFileOutputStream;
 
-	public SerialPort1(File device, int baudrate, int flags) throws SecurityException, IOException {
+	public SerialPort(File device, int baudrate, int flags) throws SecurityException, IOException {
 
 		/* Check access permission */
 		if (!device.canRead() || !device.canWrite()) {

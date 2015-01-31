@@ -31,7 +31,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android_serialport_api.SerialPort1;
+import android_serialport_api.SerialPort;
 import android_serialportfinder_api.SerialPortFinder;
 import android.content.BroadcastReceiver;
 import android.content.Context;
