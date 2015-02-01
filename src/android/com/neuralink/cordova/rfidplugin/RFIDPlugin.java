@@ -13,6 +13,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.InvalidParameterException;
 
+import android.os.SystemClock;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
@@ -621,6 +622,14 @@ public class RFIDPlugin extends CordovaPlugin {
 	}
 	private class MyHandler extends Handler{
 		public void handleMessage(Message msg) {
+
+			PWMControl.EnableBuzze(1);
+			SystemClock.sleep(100);
+			PWMControl.EnableBuzze(0);
+			PWMControl.EnableBuzze(1);
+			SystemClock.sleep(100);
+			PWMControl.EnableBuzze(0);
+
 			switch(msg.what){
 			case READ_RESULT:
 				if(msg.arg1!=OK)
