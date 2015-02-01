@@ -40,7 +40,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.util.Log;
 import android.os.Message;
-//import hdx.pwm.PWMControl;
+import hdx.pwm.PWMControl;
 import android.app.Instrumentation;;
 
 
@@ -105,8 +105,8 @@ public class RFIDPlugin extends CordovaPlugin {
 
 		app = new TTT();
 		handler = new MyHandler();
-		//PWMControl.RfidEnable(1);
-		//sleep(100);
+		PWMControl.RfidEnable(1);
+		sleep(100);
 
 		if(opened==false)
 		{
@@ -160,7 +160,7 @@ public class RFIDPlugin extends CordovaPlugin {
 			mSerialPort = app.getSerialPort();
 			mOutputStream = mSerialPort.getOutputStream();
 			mInputStream = mSerialPort.getInputStream();
-			//PWMControl.RfidEnable(1);
+			PWMControl.RfidEnable(1);
 
 			//Create a receiving thread 
 			
@@ -214,7 +214,7 @@ public class RFIDPlugin extends CordovaPlugin {
 		sleep(100);
 		app.closeSerialPort();
 		mSerialPort = null;
-		//PWMControl.RfidEnable(0);
+		PWMControl.RfidEnable(0);
 		return true;
     }
 	

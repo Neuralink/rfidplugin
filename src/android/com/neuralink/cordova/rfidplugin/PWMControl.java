@@ -29,6 +29,6 @@ public class PWMControl{
     private native static int SetRfidPower(int enable);
     private native static int SetPrinterPower(int enable);
     static {
-    	System.loadLibrary("pwmV2");
+    	System.loadLibrary("pwm");
     }
 }
